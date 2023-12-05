@@ -48,15 +48,10 @@ Thumbs.db
 *.mov
 *.wmv
 
-IVision.API/obj/
-IVision.Core/obj/
-IVision.Data/obj/
-IVision.Service/obj/
-IVision.Common/obj/
+Shoematic.API/obj/
+Shoematic.Data/obj/
 .vs/
-IVision.API/bin/
-IVision.Data/bin/
-IVision.Core/bin/
-IVision.Common/bin/
-IVision.API/Properties/
-IVision.API/.config/dotnet-tools.json
+Shoematic.API/bin/
+Shoematic.Data/bin/
+Shoematic.API/Properties/
+Shoematic.API/.config/dotnet-tools.json
