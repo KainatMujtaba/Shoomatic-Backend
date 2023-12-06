@@ -8,17 +8,18 @@ using System.Threading.Tasks;
 
 namespace Shoematic.Data.Entities
 {
-    public class ProductImage
+    public class ProductSizes
     {
         [Key]
-        public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id {  get; set; }
         public int ProductId { get; set; }
+        public int SizeId { get; set; }
 
         [ForeignKey(nameof(ProductId))]
         public Product Product { get; set; }
-        public string Name { get; set; }
-        public string Extention { get; set; }
 
-        // Navigation property
+        [ForeignKey(nameof(SizeId))]
+        public Size Size { get; set; }
     }
 }

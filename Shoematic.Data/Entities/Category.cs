@@ -14,10 +14,5 @@ namespace Shoematic.Data.Entities
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
-
-        // Navigation properties
-        public ICollection<SubCategory> SubCategories { get; set; }
-        public ICollection<Size> Sizes { get; set; }
-        public ICollection<Product> Products { get; set; }
     }
 }

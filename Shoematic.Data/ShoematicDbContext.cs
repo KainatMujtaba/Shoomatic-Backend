@@ -17,14 +17,13 @@ namespace Shoematic.Data
             Database.SetCommandTimeout(150000);
         }
 
-        public DbSet<Brand> Brands { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<SubCategory> SubCategories { get; set; }
-        public DbSet<Gender> Genders { get; set; }
-        public DbSet<Size> Sizes { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Size> Sizes{ get; set; }
+        public DbSet<ProductSizes> ProductSizes { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<ProductImage> ProductImages { get; set; }
-        public DbSet<ProductSizeQuantity> ProductSizeQuantities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
