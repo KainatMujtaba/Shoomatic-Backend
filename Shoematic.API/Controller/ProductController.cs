@@ -72,5 +72,15 @@ namespace Shoematic.API.Controller
             return StatusCode(200);
         }
 
+        [HttpDelete("DeleteProduct/{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = await Context.Products.FirstOrDefaultAsync(p => p.Id == id);
+            if (product is null)
+                return StatusCode(404, "Product Not found");
+            Context.Products.Remove(product);
+            await Context.SaveChangesAsync();
+            return StatusCode(200, "Product deleted Successfully");
+        }
     }
 }

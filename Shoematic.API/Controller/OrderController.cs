@@ -64,5 +64,15 @@ namespace Shoematic.API.Controller
 
             return StatusCode(200,orders);
         }
+        [HttpDelete("DeleteOrder/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var order = await Context.Orders.FirstOrDefaultAsync(p => p.Id == id);
+            if (order is null)
+                return StatusCode(404, "Order Not found");
+            Context.Orders.Remove(order);
+            await Context.SaveChangesAsync();
+            return StatusCode(200, "Order deleted Successfully");
+        }
     }
 }
